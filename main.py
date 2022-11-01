@@ -182,9 +182,9 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "PyQt5+YOLOv5示例"))
-        self.pushButton_img.setText(_translate("MainWindow", "图片检测"))
-        self.pushButton_camera.setText(_translate("MainWindow", "摄像头检测"))
-        self.pushButton_video.setText(_translate("MainWindow", "视频检测"))
+        self.pushButton_img.setText(_translate("MainWindow", "Image"))
+        self.pushButton_camera.setText(_translate("MainWindow", "Cam"))
+        self.pushButton_video.setText(_translate("MainWindow", "Video"))
         self.label.setText(_translate("MainWindow", "TextLabel"))
 
     def init_slots(self):
@@ -270,7 +270,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
     def button_camera_open(self):
         if not self.timer_video.isActive():
             # 默认使用第一个本地camera
-            flag = self.cap.open(0)
+            flag = self.cap.open(4)
             if flag == False:
                 QtWidgets.QMessageBox.warning(
                     self, u"Warning", u"打开摄像头失败", buttons=QtWidgets.QMessageBox.Ok, defaultButton=QtWidgets.QMessageBox.Ok)
